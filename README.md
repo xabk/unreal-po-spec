@@ -4,11 +4,13 @@
 
 Unreal Editor is using gettext PO as it's export and import format for localization data. It's not using many of the PO standard features (no plurals, no #| comments with previous sources, etc.) and it seems to expect some other differences in how the PO is treated (e.g., msgctxt is the only thing that identifies the string). This document aims to sum up those the format and its differences from the standard PO format spec. The goal is to help anyone who want to implement Unreal PO support in their tools but it's mostly aimed at CAT tools.
 
-# Gettext PO specs
+Important links:
+1. Unreal text localization and formatting: https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/Localization/Formatting/
+2. Gettext PO format description: https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html
 
-Here's the link to the original gettext PO format description: https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html
+## Gettext PO and Unreal PO
 
-The most packed entry could look like this:
+Here's how a standard PO entry could look like:
 
 ```s
 #  translator-comments
@@ -125,8 +127,16 @@ In standard Unreal this contains the metadata for string table entries: extra co
 
 ## Plurals: Inline, not PO
 
+`You have {x} {x}|plural(one=apple,other=apples)`
+`You came {Place}{Place}|ordinal(one=st,two=nd,few=rd,other=th)!`
+
 ## Gender Branching
 
+`{g}|(masculine,feminine,neuter)`
+`{g}|gender(Le guerrier est fort,La guerrière est forte)`
+
 ## Hangul Postposition
+
+`{Arg}|hpp(은,는)`
 
 ## Inline Expressions Extensibility
