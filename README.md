@@ -28,14 +28,16 @@ msgstr[N] translated-string-case-n
 
 Here's how it looks rewritten in Unreal terms and trimmed it down a bit since isn't using gettext PO plurals (`_plural`, `[0]`, etc.), previous values of fields comments (`#|`), and flags (`#,`):
 
-`#  Translator comments` (added outside of Unreal Editor, can be preserved between imports/exports)<br/>
-`#. Key: key` (just the string key, no namespace included here)<br/>
-`#. InfoMetaData:	"Field Name" : "Field Value"` (one or more metadata fields)<br/>
-`#. SourceLocation:	/Path/To/Source/File/Or/Asset:Line number OR Path inside the asset`<br/>
-`#: /Path/To/Source/File/Or/Asset:Line number OR Path inside the asset`<br/>
-`msgctxt "namespace,key"` (if namespace is empty, it's just `,key` with a leading comma)<br/>
-`msgid "untranslated-string"` (in quotes, can be multiline)<br/>
-`msgstr "translated-string"` (in quotes, can be multiline)<br/>
+```s
+#  Translator comments` (added outside of Unreal Editor, can be preserved between imports/exports)<br/>
+#. Key: key` (just the string key, no namespace included here)<br/>
+#. InfoMetaData:	"Field Name" : "Field Value"` (one or more metadata fields)<br/>
+#. SourceLocation:	/Path/To/Source/File/Or/Asset:Line number OR Path inside the asset`<br/>
+#: /Path/To/Source/File/Or/Asset:Line number OR Path inside the asset`<br/>
+msgctxt "namespace,key" # (if namespace is empty, it's just `,key` with a leading comma)<br/>
+msgid "untranslated-string" # (in quotes, can be multiline)<br/>
+msgstr "translated-string" # (in quotes, can be multiline)<br/>
+```
 
 ## Line-endings
 
@@ -84,7 +86,7 @@ In Unreal, it can be a link to a source file and a line number. It can also be a
 
 Here's a bunch of examples:
 
-```
+```s
 #: /Path/To/Source/File.ext:99
 #: /Game/AssetName.Default__AssetName_C.mArray(123).mPropertyName
 #: /Game/AssetName.AssetName:Something_C_0.mSubtitle
@@ -101,7 +103,9 @@ Unreal adds the following as extracted comments (`#.`):
 
 ### Source location
 
-`#. Source Location:	/Game/AssetName.AssetName_C:ExecuteUbergraph_AssetName [Script Bytecode]`
+```s
+#. Source Location:	/Game/AssetName.AssetName_C:ExecuteUbergraph_AssetName [Script Bytecode]
+```
 
 *Note that it's a `tab` between `Source Location:` and the value.*
 
@@ -109,9 +113,11 @@ It's just a copy of the source reference field here, and there's a checkbox in t
 
 ### Metadata
 
-`#. InfoMetaData:	"Mood" : "Agitated"`<br/>
-`#. InfoMetaData:	"Priority" : "9"`<br/>
-`#. InfoMetaData:	"Description" : "Nothing to see here"`
+```s
+#. InfoMetaData:	"Mood" : "Agitated"
+#. InfoMetaData:	"Priority" : "9"
+#. InfoMetaData:	"Description" : "Nothing to see here"
+```
 
 *Note that it's a `tab` between `InfoMetaData:` and the field name. And regular `spaces` between field name, colon, and value.*
 
