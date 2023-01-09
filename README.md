@@ -128,11 +128,13 @@ In standard Unreal this contains the metadata for string table entries: extra co
 ## Plurals: Inline, not PO
 
 `You have {x} {x}|plural(one=apple,other=apples)`
+
 `You came {Place}{Place}|ordinal(one=st,two=nd,few=rd,other=th)!`
 
 ## Gender Branching
 
 `{g}|(masculine,feminine,neuter)`
+
 `{g}|gender(Le guerrier est fort,La guerrière est forte)`
 
 ## Hangul Postposition
