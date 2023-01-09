@@ -31,14 +31,14 @@ msgstr[N] translated-string-case-n
 Here's how it looks rewritten in Unreal terms and trimmed it down a bit since isn't using gettext PO plurals (`_plural`, `[0]`, etc.), previous values of fields comments (`#|`), and flags (`#,`):
 
 ```s
-#  Translator comments` (added outside of Unreal Editor, can be preserved between imports/exports)<br/>
-#. Key: key` (just the string key, no namespace included here)<br/>
-#. InfoMetaData:	"Field Name" : "Field Value"` (one or more metadata fields)<br/>
-#. SourceLocation:	/Path/To/Source/File/Or/Asset:Line number OR Path inside the asset`<br/>
-#: /Path/To/Source/File/Or/Asset:Line number OR Path inside the asset`<br/>
-msgctxt "namespace,key" # (if namespace is empty, it's just `,key` with a leading comma)<br/>
-msgid "untranslated-string" # (in quotes, can be multiline)<br/>
-msgstr "translated-string" # (in quotes, can be multiline)<br/>
+#  Translator comments (added outside of Unreal Editor, can be preserved between imports/exports)
+#. Key: key (just the string key, no namespace included here)
+#. InfoMetaData:	"Field Name" : "Field Value" (one or more metadata fields)
+#. SourceLocation:	/Path/To/Source/File/Or/Asset:Line number OR Path inside the asset
+#: /Path/To/Source/File/Or/Asset:Line number OR Path inside the asset
+msgctxt "namespace,key" # (if namespace is empty, it's just `,key` with a leading comma)
+msgid "untranslated-string" # (in quotes, can be multiline)
+msgstr "translated-string" # (in quotes, can be multiline)
 ```
 
 ## Line-endings
