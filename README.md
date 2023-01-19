@@ -39,8 +39,8 @@ Here's how it looks rewritten in Unreal terms and trimmed down a bit since UE is
 #  Translator comments  // Added manually outside of UE, can be preserved during imports/exports
 #. Key: key             // Exported by UE, only the key, namespace excluded
 #. InfoMetaData:	"Field Name" : "Field Value"    // Exported by UE, one or more metadata fields
-#. SourceLocation:	/Path/To/Source/File/Or/Asset:Line_Number OR Path/Inside/The/Asset  // Exported by UE
-#: /Path/To/Source/File/Or/Asset:Line_Number OR Path/Inside/The/Asset                   // Exported by UE
+#. SourceLocation:	/Source/File/Or/Asset:Line_Number OR Path/Inside/The/Asset  // Exported by UE
+#: /Source/File/Or/Asset:Line_Number OR Path/Inside/The/Asset                   // Exported by UE
 msgctxt "namespace,key" # Exported by UE, it's just `,key` with a leading comma if namespace is empty
 msgid "untranslated-string" # Can be multiline, can contain inline expressions for plurals, etc.
 msgstr "translated-string" # Can be multiline
@@ -85,7 +85,7 @@ In standard PO, strings are identified by a *combination* of `msgid` and `msgctx
 
 Unreal isn't using `#|` comments but in Unreal POs, strings can be identified by the contents of `msgctxt` only since `msgctxt` contains a *unique* combination of Unreal namespace and key for that string. It should be unique within the file, it's a malformed file that shouldn't be accepted (and it's an error for Unreal Editor as well).
 
-The tool that supports Unreal PO should use `msgctxt` as a unique ID of a string, and `msgstr` as its source and source only. So when a file is updated and the source changes for a string, it should treat this as an edit operation.
+The tool that supports Unreal PO should use `msgctxt` as a unique ID of a string, and `msgid` as its source and source only. So when a file is updated and the source changes for a string, it should treat this as an edit operation.
 
 ## Source References
 
@@ -142,7 +142,7 @@ It's just a copy of the source reference field here, and there's a checkbox in t
 #. InfoMetaData:	"Description" : ""
 ```
 
-*Note that it's a `tab` between `InfoMetaData:` and the field name. And regular `spaces` between field name, colon, and value.*
+*Note that it's a `tab` between `InfoMetaData:` and the field name. And `spaces` between field name, colon, and value.*
 
 If a string table has any extra columns, they are exported this way. Each extra column value will be exported in this format into its own comment. Emtry values are still exported (see the empty Description above)
 
