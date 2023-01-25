@@ -1,17 +1,39 @@
 # Unreal PO Format
 
+## Introduction
 *Description of the PO flavor used by Unreal Editor*
 
-Unreal Editor is using gettext PO as it's export and import format for localization data. It's not using many of the PO standard features (no plurals, no #| comments with previous sources, etc.) and it seems to expect some other differences in how the PO is treated (e.g., msgctxt is the only thing that identifies the string). This document aims to sum up those the format and its differences from the standard PO format spec. The goal is to help anyone who want to implement Unreal PO support in their tools but it's mostly aimed at CAT tools.
+Unreal Editor is using gettext PO as its export and import format for localization data. 
+It's not using many of the PO standard features (no plurals, no #| comments with previous 
+sources, etc.), has its own syntax for plurals, gender choices, etc. and that results 
+in a number of issues if these PO files are treated as standard PO files. This document 
+aims to sum up the Unreal PO format and its differences from the standard PO spec. The goal 
+is to help anyone who wants to implement Unreal PO support in their tools but it's mostly 
+aimed at CAT tool developers.
 
-Important links:
+Links:
 1. Unreal text localization and formatting: https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/Localization/Formatting/
 2. Gettext PO format description: https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html
 
-## Contents:
-- [Gettext PO and Unreal](#gettext-po-and-unreal-po)
+- [Unreal PO Format](#unreal-po-format)
+  - [Introduction](#introduction)
+  - [Gettext PO and Unreal PO](#gettext-po-and-unreal-po)
+  - [Line-endings](#line-endings)
+  - [String Identification](#string-identification)
+  - [Source References](#source-references)
+  - [Sorting](#sorting)
+  - [Comments: Source Location, Metadata, etc.](#comments-source-location-metadata-etc)
+    - [Source location](#source-location)
+    - [Metadata](#metadata)
+  - [Plurals: Inline, not PO](#plurals-inline-not-po)
+    - [Quotation and escaping](#quotation-and-escaping)
+  - [Gender Branching](#gender-branching)
+  - [Hangul Postposition](#hangul-postposition)
+  - [Inline Expressions Extensibility](#inline-expressions-extensibility)
 - [Crowdin Feedback](#crowdin-feedback)
-
+    - [Line-endings](#line-endings-1)
+    - [UE→ICU conversion:](#ueicu-conversion)
+    - [ICU→UE Conversion:](#icuue-conversion)
 
 ## Gettext PO and Unreal PO
 
@@ -280,7 +302,7 @@ Unreal allows developers to extend these expressions with new features (e.g., ad
 
     `{variable_name}|hpp(은,는)` → ... (I guess we could convert that into a `select` expression?)
 
-### ICU→UE:
+### ICU→UE Conversion:
 
 8. Outer quotes are escaped twice.
 
