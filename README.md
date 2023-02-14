@@ -229,7 +229,7 @@ This could be a `select` ICU expression.
 
 ## Inline Expressions Extensibility
 
-Unreal allows developers to extend these expressions with new features (e.g., add new keywords or add support for exact number matching to the plural expression) and new types
+Unreal allows developers to extend these expressions with new features (e.g., add new `keywords` on top of `plural`, `gender`, etc., or add support for exact number matching to the `plural` expression), new tags for rich text (on top of `<tags></>`), etc. Basic Unreal PO file format on Crowdin can't support this out of the box of course but it could be nice to make the code accesible and extendable for people to be able to easily modify it to support their own additions.
 
 ---
 
