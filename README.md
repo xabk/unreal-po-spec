@@ -346,4 +346,4 @@ Unreal allows developers to extend these expressions with new features (e.g., ad
 
 11. `=N` plural forms should be removed or at least be flagged as QA issues.
 
-    It seems that now Corwidn just doesn't let you add `=N` options, throwing an "ICU structure is not the same" error.
+    It seems that now Crowdin just doesn't let you add `=N` options, throwing an "ICU structure is not the same" error.
