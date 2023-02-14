@@ -32,6 +32,7 @@ Contents:
   - [Hangul Postposition](#hangul-postposition)
   - [Inline Expressions Extensibility](#inline-expressions-extensibility)
 - [Crowdin Feedback](#crowdin-feedback)
+    - [What works:](#what-works)
     - [Line-endings](#line-endings-1)
     - [UE→ICU conversion:](#ueicu-conversion)
     - [ICU→UE Conversion:](#icuue-conversion)
@@ -234,6 +235,13 @@ Unreal allows developers to extend these expressions with new features (e.g., ad
 ---
 
 # Crowdin Feedback
+
+### What works:
+
+- Crowdin identifies strings only by `msgctxt` and treats source edits as edits (and not deletions and new strings). It's one of the biggest issues solved, thank you! :)
+- UE/ICU syntax is being converted but with some bugs. 
+
+    There's also another implementation of this syntax conversion as part of the processor you've created for us, it's enabled in Satisfactory (factorygame project on crowdin.com)! That processor is also a bit bugged, as it returns source text as translation for untranslated lines, but the UE/ICU syntax conversion seems to work better there.
 
 ### Line-endings
 
