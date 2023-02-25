@@ -63,17 +63,17 @@ Links:
 
     It should only be applied to the strings. As an example, I had an original string in UE syntax in a comment, and got something completely broken on Crowdin:
 
-    `image.png`
+    ![Broken ICU in comments](images/broken-icu-in-extracted-comments.png)
 
 6. Extra variables on the ICU preview/helper pane.
 
     There's an extra variable on the ICU preview/helper pane that shouldn't be there. It doesn't affect anything, as the ICu expression itself is controlled by the second instance of the same variable.
 
     There should be just one variable on the ICU preview/helper pane no matter how many times the variable appers in the string: it's still the same variable.
+    
+    ![Duplicared ICU variables](images/duplicated-variable-in-ICU-preview-1.png)
 
-    `image.png`
-
-    `image.png`
+    ![Duplicated ICU variables](images/duplicated-variable-in-ICU-preview-2.png)
 
 7. Ordinals, genders and Hangul postpositions aren't supported.
 
