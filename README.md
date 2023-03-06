@@ -26,6 +26,10 @@ Contents:
   - [Comments: Source Location, Metadata, etc.](#comments-source-location-metadata-etc)
     - [Source location](#source-location)
     - [Metadata](#metadata)
+  - [Variables and formattings tags](#variables-and-formattings-tags)
+    - [Variables](#variables)
+    - [Formatting tags](#formatting-tags)
+    - [Images](#images)
   - [Plurals: Inline, not PO](#plurals-inline-not-po)
     - [Quotation and escaping](#quotation-and-escaping)
   - [Gender Branching](#gender-branching)
@@ -177,6 +181,28 @@ It might be a good QoL feature to try to remove all the extra garbage (InfoMeaDa
 #. Priority: 9
 #. Description:
 ```
+
+## Variables and formattings tags
+
+### Variables
+
+By default, Unreal has `{variables in curly braces}`. They can also be part of the inline plural and other constructions. See below.
+
+Square brackets aren't used for variables and text in square brackets shouldn't be locked as variables.
+
+### Formatting tags
+
+Unreal rich text UI elements have XML-like tags with a few quirks. Tags don't have translatable attributes. Closing tags don't have names. For some tags, attributes provide valuable context (e.g., image names) that should be visible to translators.
+
+Formatting is done using `<angled brackets tags>` with `</>` closing tags. Formatting tags usually don't have attributes but that can be changed by the project developers on each project.
+
+Unreal rich text doesn't support nested tags: closing tags aren't named and they just close the first unclosed tag, not the last one. E.g., `<blue>1<green>2</>3</>` will produce a blue 1, a green 2, and a *green* 3.
+
+Since rich text UI elements are isolated, it's not a big deal to omit a closing tag. E.g., `<blue>thing` is a perfectly valid rich text value albeit a sloppy one, and it can be seen in a lot of projects.
+
+### Images
+
+Unreal rich text elements also support inline images out of the box. Images are added using empty tags: `<img id="image-name"/>` though this can be changed or extended by the developers on each project.
 
 ## Plurals: Inline, not PO
 
