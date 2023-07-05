@@ -189,7 +189,7 @@ Square brackets aren't used for variables and text in square brackets shouldn't 
 
 Unreal rich text UI elements have XML-like tags with a few quirks. Tags don't have translatable attributes. Closing tags don't have names. For some tags, attributes provide valuable context (e.g., image names) that should be visible to translators.
 
-Formatting is done using `<angled brackets tags>` with `</>` closing tags. Formatting tags usually don't have attributes but that can be changed by the project developers on each project. Tags names are in no way standardized, each project will have their own set of tags and they can be anything.
+Formatting is done using `<angled brackets tags>` with `</>` closing tags. Formatting tags usually don't have attributes but that can be changed by the project developers on each project. Tag names are in no way standardized, each project will have its own set of tags and they can be anything.
 
 Unreal rich text doesn't support nested tags: closing tags aren't named and they just close the first unclosed tag, not the last one. E.g., `<blue>1<green>2</>3</>` will produce a blue 1, a green 2, and a *green* 3.
 
