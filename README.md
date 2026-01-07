@@ -243,6 +243,8 @@ Plural forms quoted, internal quotes escaped, Unreal, PO, ICU:
 
 This could be a `select` ICU expression.
 
+Warning: There are no defaults or fallbacks for genders in Unreal. If you request a gender in runtime that doesn't exist in the text, you'll get an empty string. E.g., if you pass `neuter` into `{gender}|gender(he, she) took an apple`, you'll get ` took an apple`.
+
 ## Hangul Postposition
 
 `{Arg}|hpp(은,는)`
